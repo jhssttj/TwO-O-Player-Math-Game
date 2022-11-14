@@ -1,25 +1,24 @@
 class Question
 
-  attr_accessor :random1, :random2, :question;
+  attr_reader :random1, :random2, :question, :userInput, :correct;
 
   def initialize()
-    @random1 = rand(11);
-    @random2 = rand(11);
+    @random1 = rand(1..20);
+    @random2 = rand(1..20);
     @question = @random1 + @random2;
+    @correct = false;
+  end
 
+  def askQuestion()
     print "What is #{@random1} plus #{random2}? Input: "
-    userInput = gets.chomp.to_i;
-    puts gets.chomp.ti_i;
+    @userInput = gets.chomp.to_i
   end
 
   def check()
+    if @question == @userInput
+      @correct = true;
+    end
   end
-
 
 end
 
-
-p = Question.new;
-
-puts p.random;
-puts p.question;
